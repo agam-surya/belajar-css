@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      height: 100%;
+      width: 100%;
+      margin: 10px;
+      border: 2px solid black;
+    }
+    .static,.relative,.absolute,.fixed{
+      border: 5px solid greenyellow;
+      width: 400px;
+      height: 400px;
+      margin: auto;
+    }
+
+    .satu{
+      background-color: blue;
+      height: 100px;
+      width: 100px;
+    }
+
+    .dua{
+      background-color: red;
+      height: 100px;
+      width: 100px;
+    }
+
+    .tiga{
+      background-color: green;
+      height: 100px;
+      width: 100px;
+    }
+
+
+    /* relative => 
+    1. berbeda dimensi
+    2. tempat sebelumnya tetap ada
+    3. bisa digeser tanpa mempengaruhi sekitarnya selama tetap beda dimensi
+    */
+
+    .relative > .dua{
+      position: relative;
+      left: 20px;
+      top: 20px;
+    }
+ 
+
+    /* absolute => 
+    1. berbeda dimensi
+    2. tempat sebelumnya hilang/dihapus (element dibawahnya akan mengisi ruang yang dihapus)
+    3. menyesuaikan terhadap parent jika parentnya berdimensi yang sama, jika tidak maka akan menyesuaikan window
+    */
+
+    /* parent dijadikan sedimensi dulu */
+    .absolute{
+      position: relative;
+    }
+    .absolute > .dua{
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+ 
+
+    /* fixed => 
+    1. berbeda dimensi
+    2. tempat sebelumnya hilang/dihapus (element dibawahnya akan mengisi ruang yang dihapus)
+    3. menyesuaikan terhadap window/layar meskipun parent punya dimensi yang sama
+    */
+
+    /* meskipun parent dijadikan sedimensi namun tetap tidak berpengaruh */
+    .fixed{
+      position: relative;
+    }
+    .fixed > .dua{
+      position: fixed;
+      left: 0px;
+      top: 0px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <!-- static => default
+  <div class="static">
+    <div class="satu"></div>
+    <div class="dua"></div>
+    <div class="tiga"></div>
+  </div> -->
+
+  <!-- relative
+  <div class="relative">
+    <div class="satu"></div>
+    <div class="dua"></div>
+    <div class="tiga"></div>
+  </div> -->
+
+  <!-- absolute
+  <div class="absolute">
+    <div class="satu"></div>
+    <div class="dua"></div>
+    <div class="tiga"></div>
+  </div> -->
+
+  <!-- fixed -->
+  <div class="fixed">
+    <div class="satu"></div>
+    <div class="dua"></div>
+    <div class="tiga"></div>
+  </div>
+</body>
+</html>

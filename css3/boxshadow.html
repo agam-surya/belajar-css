@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: auto;
+      width: 100%;
+      background-color: rgb(3, 45, 3);
+    }
+
+    .logo {
+      background-color: rgb(35, 29, 29);
+      position: relative;
+      height: 150px;
+      width: 150px;
+      margin: auto;
+      line-height: 150px;
+      box-shadow:
+        3px -3px 0 0px rgb(203, 13, 184),
+        6px -6px 40px 0px rgb(203, 13, 184),
+        -3px 3px 0 0px rgb(23, 10, 211),
+        -6px 6px 40px 0px rgb(23, 10, 211);
+    }
+
+    .circle {
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      margin: auto;
+      inset: 0;
+      border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(45deg, red, blue);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo">
+    <div class="circle"></div>
+  </div>
+</body>
+
+</html>
